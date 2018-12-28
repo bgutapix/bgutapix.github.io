@@ -1,7 +1,12 @@
 ---
 
 ---
-@import "minima";
+$background-color: #fcf7f7;
+$grey-color: #111;
+$brand-color: #000000;
+$text-color: #111;
+$hover-color: #175e77;
+
 
 img {
   display: block;
@@ -9,3 +14,50 @@ img {
   margin-right: auto;
   width: 90%;
 }
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+
+  &:hover {
+    color: $hover-color;
+    font-style: italic
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: italic;
+    }
+  }
+}
+
+@import "minima";
+
+.site-title {
+  text-align: center; 
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  margin-left: 45%;
+  margin-right: 45%;
+  float: right;
+  
+  
+
+  @include media-query($on-palm) {
+    padding-right: 45px;
+  }
+
+  &,
+  &:visited {
+    color: $grey-color-dark;
+  }
+}
+
+
